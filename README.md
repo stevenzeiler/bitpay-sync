@@ -43,7 +43,7 @@ DATABASE_HOST
 DATABASE_NAME
 DATABASE_USER
 DATABASE_PASSWORD
-DATABASE_PORT
+DATABASE_PORT     # listed in the original README; not read by the code
 PORT              # optional, default 5000
 ```
 

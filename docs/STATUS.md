@@ -11,7 +11,7 @@ Last updated 2026-11-20 (pass 02 of the GitHub audit). Nothing was installed or 
 
 - Not run: `npm install`, `npm test`, `npm start`, migrations. Dependencies are 2015 versions.
 - `src/models/invoice.js`, `Invoice.pay`: the BitPay status check is not awaited (its rejections are lost), and `!response.status === 'confirmed'` is always false, so that guard never fires. Only the `payment.status !== 'confirmed'` check on the callback body is effective. **(inference)** from reading the code.
-- `GET /notifications` etc. return errors through `next(error)` with no error-handling middleware in `src/processes/server.js`.
+- `GET /notifications` etc. return errors through `next(error)` with no error-handling middleware in `src/processes/server.js` **(inference: `bridges-express` may install one)**.
 - Only one test (`src/test/models/invoice.js`) exists.
 
 ## Next
